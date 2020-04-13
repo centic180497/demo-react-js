@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import { Marker } from "./MarKer";
-import "../../App.css";
 const pStyle = {
     height: 500,
     position: "relative",
-    top: "200px",
+    width: "100%",
+    overflow: "hidden",
 };
 class Mapapi extends Component {
     constructor(props) {
@@ -20,7 +20,6 @@ class Mapapi extends Component {
     }
     onMarkerClick = function (props, marker) {
         this.setState({
-
             selectedPlace: props,
             activeMarker: marker,
             showingInfoWindow: true,
@@ -47,8 +46,8 @@ class Mapapi extends Component {
                         onClick={this.onMapClicked}
                         zoom={14}
                         center={{ lat: 16.074805, lng: 108.220232 }}
+                        //  {...other props }
                     >
-                        
 
                         <Marker
                             position={{ lat: 16.076877, lng: 108.216349 }}
