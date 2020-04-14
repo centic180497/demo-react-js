@@ -1,29 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Marker as MarkerComponent, InfoWindow } from "@react-google-maps/api";
 
-export const Marker = ({ position, textInfoWindow, key }) => {
-    const [showingInfoWindow, setShowingInfoWindow] = useState(false);
-
+export const Marker = ({ show, position, textInfoWindow }) => {
+    const [showingInfoWindow, setShowingInfoWindow] = useState(show);
+    useEffect(() => {
+        setShowingInfoWindow(show);
+    }, [show]);
     return (
         <>
             <MarkerComponent
                 onClick={() => {
-                    console.log(1);
-                    setShowingInfoWindow({
-                        showingInfoWindow: true,
-                    });
+                    setShowingInfoWindow(!showingInfoWindow);
                 }}
                 position={position}
             />
-            {showingInfoWindow.showingInfoWindow && (
+            {showingInfoWindow && (
                 <InfoWindow
-                    className={`imforwindows_${key}`}
+                    className={`imforwindows`}
                     position={position}
-                    visible={showingInfoWindow.showingInfoWindow}
                     onCloseClick={() => {
-                        setShowingInfoWindow({
-                            showingInfoWindow: false,
-                        });
+                        setShowingInfoWindow(!showingInfoWindow);
                     }}
                 >
                     <div>
