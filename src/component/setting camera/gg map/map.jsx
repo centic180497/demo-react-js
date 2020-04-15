@@ -8,6 +8,9 @@ const pStyle = {
     overflow: "hidden",
 };
 const Mapapi = (props) => {
+        
+    console.log(props, 'props');
+    
     const [state, setState] = useState({
         showingInfoWindow: false,
         activeMarker: {},
@@ -34,6 +37,9 @@ const Mapapi = (props) => {
             const reusult = newArray.find((x) => x.id === props.show);
             reusult.defaultShowingInfoWindow = true;
             setState((s) => ({ ...s, apiMarker: newArray }));
+            console.log(reusult);
+            
+            
         }
     }, [props]);
 
@@ -49,21 +55,21 @@ const Mapapi = (props) => {
     return (
         <div className="map" style={pStyle}>
             <LoadScript
+                onClick={onMapClicked}
                 id="script-loader"
                 googleMapsApiKey="AIzaSyDb5xOZiLOJAtKJWj4spvQf3UEQvE-3sc4"
             >
                 <GoogleMap
-                    onClick={onMapClicked}
                     zoom={14}
-                    center={props.location}
+                    center={props.item?.position}
                 >
                     {state.apiMarker.map((item, index) => {
                         return (
                             <Marker
-                                show={item.defaultShowingInfoWindow}
-                                position={item.position}
-                                textInfoWindow={item.text}
                                 key={index}
+                                item={item}
+                                positionActive={props.item}
+                                handleClick={props.handleClick}
                             />
                         );
                     })}

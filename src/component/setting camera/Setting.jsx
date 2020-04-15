@@ -3,11 +3,12 @@ import { withStyles } from "@material-ui/core/styles";
 import { FormControl } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/Grid";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Mapapi from "../setting camera/gg map/map";
+
+import Mapapi from "./gg map/map";
+import '../../App.css'
 
 const styles = (theme) => ({
+
     root: {
         flexGrow: 1,
     },
@@ -27,6 +28,7 @@ const styles = (theme) => ({
         boxShadow:
             "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     },
+    
     menu: {
         display: "flex",
         listStyleType: "none",
@@ -60,6 +62,9 @@ const styles = (theme) => ({
     setlist: {
         display: "grid",
     },
+    // settitle:{
+    //     textDecoration:'none',
+    // },
     rootNavigation: {
         display: "block",
         position: "absolute",
@@ -76,16 +81,71 @@ class Setting extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: {
-                lat: 8.074805,
-                lng: 108.220232,
-            },
-            id: null,
+            list:[
+                {
+                    id:1,
+                    img:'image',
+                    camera:'camera235',
+                    address:'thạc gián,thanh khê,đà nẵng',
+                    position:{lat: 16.074805,lng: 108.220232,}
+                },
+                {
+                    id:2,
+                    img:'image',
+                    camera:'camera236',
+                    address:'hòa quý,thanh khê,đà nẵng',
+                    position:{lat: 16.076877,lng: 108.216349}
+                },
+                {
+                    id:3,
+                    img:'image',
+                    camera:'camera237',
+                    address:'hòa quý,thanh khê,đà nẵng',
+                    position:{lat: 16.074562,lng: 108.220232,}
+                },
+                {
+                    id:4,
+                    img:'image',
+                    camera:'camera238',
+                    address:'thạc gián,thanh khê,đà nẵng',
+                    position:{lat: 16.074589,lng: 108.216399,}
+                },
+            ], 
+            item: null,
+            idActive: ''
         };
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(e, id) {
-        this.setState({ item: e, id: id });
+    handleClick(item) {
+        console.log(item,'item');
+        
+        this.setState({ item, idActive: item.id });
+    }
+
+    renderListCamera(item, classes,index,) {
+        return (
+            <div
+                                    className={classes.listitem}
+                                    onClick={() => {
+                                        this.handleClick(item)
+                                    }}
+                                    key={index}
+            >
+                                    <Grid item xs={4} >
+                                        <span>{item.img}</span>
+                                    </Grid>
+                                    <Grid item xs={8}>
+                                        <Grid item xs={12}>
+                                            <div  className={classes.setlist}>
+                                                <span>{item.camera}</span>
+                                                <span>
+                                                   {item.address}
+                                                </span>
+                                            </div>
+                                        </Grid>
+                                    </Grid>
+                                </div>
+        )
     }
     render() {
         const { classes } = this.props;
@@ -109,14 +169,6 @@ class Setting extends Component {
                                         <InputLabel id="demo-simple-select-label">
                                             Tìm Kiếm Nâng Cao
                                         </InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                        >
-                                            <MenuItem>Ten</MenuItem>
-                                            <MenuItem>Twenty</MenuItem>
-                                            <MenuItem>Thirty</MenuItem>
-                                        </Select>
                                     </FormControl>
                                 </Grid>
                                 <Grid item xs={12}>
@@ -126,81 +178,16 @@ class Setting extends Component {
                                         </span>
                                     </div>
                                 </Grid>
-                                <div
-                                    className={classes.listitem}
-                                    onClick={() => {
-                                        this.handleClick(
-                                            {
-                                                lat: 16.074805,
-                                                lng: 108.220232,
-                                            },
-                                            1
-                                        );
-                                    }}
-                                >
-                                    <Grid item xs={4}>
-                                        ádasd
-                                    </Grid>
-                                    <Grid item xs={8}>
-                                        <Grid item xs={12}>
-                                            <div className={classes.setlist}>
-                                                <span>camera 235,</span>
-                                                <span>
-                                                    thạc gián, thanh khê, đà
-                                                    nẵng
-                                                </span>
-                                            </div>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                                <div
-                                    onClick={() => {
-                                        this.handleClick({
-                                            lat: 16.076877,
-                                            lng: 108.216349,
-                                        },2
-                                        );
-                                    }}
-                                    className={classes.listitem}
-                                >
-                                    <Grid item xs={4}>
-                                        ádasd
-                                    </Grid>
-                                    <Grid item xs={8}>
-                                        <Grid item xs={12}>
-                                            <div className={classes.setlist}>
-                                                <span>camera 235,</span>
-                                                <span>
-                                                    thạc gián, thanh khê, đà
-                                                    nẵng
-                                                </span>
-                                            </div>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                                <div className={classes.listitem}>
-                                    <Grid item xs={4}>
-                                        ádasd
-                                    </Grid>
-                                    <Grid item xs={8}>
-                                        <Grid item xs={12}>
-                                            <div className={classes.setlist}>
-                                                <span>camera 235,</span>
-                                                <span>
-                                                    thạc gián, thanh khê, đà
-                                                    nẵng
-                                                </span>
-                                            </div>
-                                        </Grid>
-                                    </Grid>
-                                </div>
+                                {this.state.list.map((v,index) => this.renderListCamera(v, classes,index))}
+                              
                             </Grid>
                         </Grid>
                     </div>
                     <Grid item xs={12}>
                         <Mapapi
-                            location={this.state.item}
-                            show={this.state.id}
+                            item={this.state.item}
+                            idActive={this.state.idActive}
+                            handleClick={this.handleClick}
                         />
                     </Grid>
                 </Grid>
