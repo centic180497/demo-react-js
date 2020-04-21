@@ -49,9 +49,8 @@ const useStyles = makeStyles((theme) => ({
           password: values.password,
         })
         .then((response) => {
-      
-            document.cookie = 'auth=' + response.data.jwt;
-            document.cookie = 'username=' + response.data.user.username;
+            document.cookie = 'auth=' + response.data.username;
+            document.cookie = 'username=' + response.data.password;
             Snackbar.success({
                 message: 'Logged in successfully',
                 duration: 2,
