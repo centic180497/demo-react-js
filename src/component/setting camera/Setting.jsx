@@ -317,12 +317,12 @@ class Setting extends Component {
                                         </span>
                                     </div>
                                 </Grid>
-                                     <Grid item xs={12} className={classes.scroll}> 
-                                        <Scrollbars> 
-                                            {this.state.list.map((v,index) => this.renderListCamera(v, classes,index))}   
-                                        </Scrollbars>                
-                                    </Grid>
-                              
+                                <Grid item xs={12} className={classes.scroll}> 
+                                <Scrollbars> 
+                                    {this.state.list.map((v,index) => this.renderListCamera(v, classes,index))}   
+                                </Scrollbars>                
+                                </Grid>
+                        
                             </Grid>
                         </Grid>
                     </div>

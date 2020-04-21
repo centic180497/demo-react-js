@@ -6,13 +6,15 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,} from '@material-ui/core/styles';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import Container from '@material-ui/core/Container';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import {FormHelperText} from '@material-ui/core';
-
-
+import axios from 'axios';
+// import API_URL from '../config';
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -35,10 +37,35 @@ const useStyles = makeStyles((theme) => ({
       color:'red',
   }
 }));
+
  const SignIn = (props) => {
-     console.log(props);
-     
   const classes = useStyles();
+  function onFinish(values) {
+    console.log(values);
+    
+    axios
+        .post('http://103.101.76.161:8001/api/user/login', {
+          username: values.username,
+          password: values.password,
+        })
+        .then((response) => {
+      
+            document.cookie = 'auth=' + response.data.jwt;
+            document.cookie = 'username=' + response.data.user.username;
+            Snackbar.success({
+                message: 'Logged in successfully',
+                duration: 2,
+            });
+        })
+        .catch(() => {
+          Snackbar.error({
+                message: 'Login failed',
+            });
+        });
+  }
+  function handleclick(){
+    
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -48,16 +75,16 @@ const useStyles = makeStyles((theme) => ({
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={onFinish}>
           <TextField
             variant="outlined"
             margin="normal"
             fullWidth
-            id="email"
+            id="username"
             label="Email Address"
-            name="email"
+            name="username"
             autoFocus
-            value={props.values.email}
+            value={props.values.username}
             onChange={props.handleChange} 
           />
           <FormHelperText className={classes.color}>{props.errors.email}</FormHelperText>
@@ -82,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleclick()}
           >
             login
           </Button>
@@ -91,14 +119,14 @@ const useStyles = makeStyles((theme) => ({
   );
 }
 const FormikForm = withFormik({
-    mapPropsToValues() { // Init form field
+    mapPropsToValues() {
         return {
             email: '',
            
         }
     },
-    validationSchema: Yup.object().shape({ // Validate form field
-        email: Yup.string()
+    validationSchema: Yup.object().shape({
+      username: Yup.string()
             .required('Username is required')
             .min(5, 'Username ít nhất 5 kí tự')
             .max(10, 'Username nhiều nhất 10 kí tự'),
