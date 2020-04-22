@@ -14,6 +14,8 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import {FormHelperText} from '@material-ui/core';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {userLoginFetch} from '../redux/action/action'
 // import API_URL from '../config';
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -38,33 +40,30 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
- const SignIn = (props) => {
+ const SignIn = ({values,handleChange,handleSubmit,touched,errors}) => {
   const classes = useStyles();
-  function onFinish(values) {
-    console.log(values);
+  // function onFinish(values) {
+  //   console.log(values);
     
-    axios
-        .post('http://103.101.76.161:8001/api/user/login', {
-          username: values.username,
-          password: values.password,
-        })
-        .then((response) => {
-            document.cookie = 'auth=' + response.data.username;
-            document.cookie = 'username=' + response.data.password;
-            Snackbar.success({
-                message: 'Logged in successfully',
-                duration: 2,
-            });
-        })
-        .catch(() => {
-          Snackbar.error({
-                message: 'Login failed',
-            });
-        });
-  }
-  function handleclick(){
-    
-  }
+  //   axios
+  //       .post('http://103.101.76.161:8001/api/user/login', {
+  //         username: values.username,
+  //         password: values.password,
+  //       })
+  //       .then((response) => {
+  //           document.cookie = 'auth=' + response.data.username;
+  //           document.cookie = 'username=' + response.data.password;
+  //           Snackbar.success({
+  //               message: 'Logged in successfully',
+  //               duration: 2,
+  //           });
+  //       })
+  //       .catch(() => {
+  //         Snackbar.error({
+  //               message: 'Login failed',
+  //           });
+  //       });
+  // }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -74,7 +73,9 @@ const useStyles = makeStyles((theme) => ({
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} onSubmit={onFinish}>
+        <form className={classes.form}
+          onSubmit={handleSubmit}
+        >
           <TextField
             variant="outlined"
             margin="normal"
@@ -83,10 +84,10 @@ const useStyles = makeStyles((theme) => ({
             label="Email Address"
             name="username"
             autoFocus
-            value={props.values.username}
-            onChange={props.handleChange} 
+            value={values.username}
+            onChange={handleChange}
           />
-          <FormHelperText className={classes.color}>{props.errors.email}</FormHelperText>
+          <FormHelperText className={classes.color}>{errors.username}</FormHelperText>
           <TextField
             variant="outlined"
             margin="normal"
@@ -95,8 +96,8 @@ const useStyles = makeStyles((theme) => ({
             label="Password"
             type="password"
             id="password"
-            value={props.values.Password}
-            onChange={props.handleChange}
+            value={values.Password}
+            onChange={handleChange}
           />    
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -108,7 +109,6 @@ const useStyles = makeStyles((theme) => ({
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleclick()}
           >
             login
           </Button>
@@ -120,8 +120,8 @@ const useStyles = makeStyles((theme) => ({
 const FormikForm = withFormik({
     mapPropsToValues() {
         return {
-            email: '',
-           
+          username: '',
+          password:'',
         }
     },
     validationSchema: Yup.object().shape({
@@ -130,6 +130,31 @@ const FormikForm = withFormik({
             .min(5, 'Username ít nhất 5 kí tự')
             .max(10, 'Username nhiều nhất 10 kí tự'),
     }),
+    handleSubmit(value){
+      this.props.userLoginFetch(this.state)
+      // axios
+      // .post('http://103.101.76.161:8001/api/user/login', {
+      //   username: value.username,
+      //   password: value.password,
+      // })
+      // .then((response) => {
+      //     document.cookie = 'auth=' + response.data.username;
+      //     document.cookie = 'username=' + response.data.password;
+      //     // Snackbar.success({
+      //     //     message: 'Logged in successfully',
+      //     //     duration: 2,
+      //     // });
+      //     alert('thành công');
+      // })
+      // .catch(() => {
+      //   alert('thất bại')
+      // });
+      // console.log(JSON.stringify(value,null,2));
+   },
 })(SignIn)
+const mapDispatchToProps = dispatch => ({
+  userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
+})
 
-export default FormikForm;
+
+export default (null, mapDispatchToProps)(FormikForm);
