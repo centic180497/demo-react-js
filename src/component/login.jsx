@@ -14,7 +14,7 @@ import { FormHelperText } from "@material-ui/core";
 import axios from "axios";
 import { connect } from "react-redux";
 import { userLoginFetch } from "../redux/action/action";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -37,16 +37,14 @@ const useStyles = makeStyles((theme) => ({
     color: "red",
   },
   display: {
-    width: '32px',
-    height: '33px',
-    textAlign: 'center',
-    marginLeft: '200px',
+    width: "32px",
+    height: "33px",
+    textAlign: "center",
+    marginLeft: "200px",
   },
-  undisplay:{
-    display:'none',
-
+  undisplay: {
+    display: "none",
   },
-  
 }));
 const SignIn = (props) => {
   console.log(props);
@@ -54,9 +52,8 @@ const SignIn = (props) => {
 
   const handleSubmit = (value) => {
     console.log(value);
-    setshowloading(true)
+    setshowloading(true);
     props.userLoginFetch(value);
-
   };
   const [showloading, setshowloading] = useState(false);
   return (
@@ -82,12 +79,12 @@ const SignIn = (props) => {
           })}
           onSubmit={(values) => {
             console.log(values);
-            
+
             handleSubmit(values);
           }}
         >
-          {(props) => (
-            <Form className={classes.form} onSubmit={props.handleSubmit}>
+          {(propsFormik) => (
+            <Form className={classes.form} onSubmit={propsFormik.handleSubmit}>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -96,11 +93,11 @@ const SignIn = (props) => {
                 label="Email Address"
                 name="username"
                 autoFocus
-                value={props.values.username}
-                onChange={props.handleChange}
+                value={propsFormik.values.username}
+                onChange={propsFormik.handleChange}
               />
               <FormHelperText className={classes.color}>
-                {props.errors.username}
+                {propsFormik.errors.username}
               </FormHelperText>
               <TextField
                 variant="outlined"
@@ -110,35 +107,40 @@ const SignIn = (props) => {
                 label="Password"
                 type="password"
                 id="password"
-                value={props.values.password}
-                onChange={props.handleChange}
+                value={propsFormik.values.password}
+                onChange={propsFormik.handleChange}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              <div className={showloading?classes.display:classes.undisplay}>
-                <CircularProgress/>
-              </div>
+
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 color="primary"
                 className={classes.submit}
+                disabled={props.loading}
               >
-                login
+                {props.loading ? <CircularProgress size={24}/> : "Login"}
               </Button>
             </Form>
           )}
         </Formik>
       </div>
-
     </Container>
   );
 };
+
+function mapStateToProps({ login }) {
+  return {
+    loading: login.loading,
+  };
+}
+
 const mapDispatchToProps = (dispatch) => ({
   userLoginFetch: (userInfo) => dispatch(userLoginFetch(userInfo)),
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
