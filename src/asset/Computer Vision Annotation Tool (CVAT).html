@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://10.49.46.251:8080/?id=5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            
+                Computer Vision Annotation Tool (CVAT)
+            
+        </title>
+
+        <link rel="stylesheet" href="./Computer Vision Annotation Tool (CVAT)_files/3ebe35f24534.css" type="text/css">
+
+        <script type="text/javascript" src="./Computer Vision Annotation Tool (CVAT)_files/fcb83cbc3b3b.js"></script>
+
+        <script type="text/javascript" src="./Computer Vision Annotation Tool (CVAT)_files/1e9adad6a1a7.js"></script>
+
+        <script type="text/javascript" src="./Computer Vision Annotation Tool (CVAT)_files/2fa119630267.js"></script>
+    </head>
+    <body style="width: 1920px; height: 1026px;">
+        
+        
+
+        
+<div id="taskAnnotationCenterPanel">
+    <div id="player">
+        <div id="playerFrame">
+            <div id="rotationWrapper" style="transform: rotate(0deg);">
+                <svg id="frameLoadingAnim" style="width: 100%; height: 100%;" class="hidden">
+                    <circle r="30" cx="50%" cy="50%" id="frameLoadingAnimation"></circle>
+                </svg>
+                
+                <svg id="frameText" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="width: 33148px; height: 32828px; top: -28079.7px; left: -28640.9px; transform: scale(10) rotate(0deg);"> <defs id="SvgjsDefs1007"></defs></svg>
+                <svg id="frameBackground" style="width: 1280px; height: 960px; top: 170.053px; left: -391.175px; transform: scale(1.77292); background-image: url(&quot;http://10.49.46.251:8080/api/v1/tasks/9/frames/456&quot;);"> </svg>
+                <svg id="frameGrid" xmlns="http://www.w3.org/2000/svg" style="width: 1280px; height: 960px; top: 170.053px; left: -391.175px; transform: scale(1.77292);">
+                    <defs>
+                        <pattern id="playerGridPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <!-- Max size value for grid is 1000. Path size should be >= such value in order to it displayed correct -->
+                            <path id="playerGridPath" d="M 1000 0 L 0 0 0 1000" fill="none" stroke="white" opacity="0" stroke-width="1.1280815182388897"></path>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#playerGridPattern)"></rect>
+                </svg>
+
+                <ul id="shapeContextMenu" class="custom-menu" oncontextmenu="return false;">
+                    <li action="object_url"> Copy Object URL </li>
+                    <li action="change_color">Change Color (Enter)</li>
+                    <li action="remove_shape">Remove Shape (Del, Shift + Del)</li>
+                    <li action="switch_occluded">Switch Occluded (Q or Num Division)</li>
+                    <li action="switch_lock">Switch Lock (L)</li>
+                    <li class="interpolationItem" action="split_track"> Split </li>
+                    <li class="polygonItem" action="drag_polygon"> Enable Dragging </li>
+                </ul>
+
+                <ul id="playerContextMenu" class="custom-menu" oncontextmenu="return false;" style="display: none; top: 440px; left: 1071px;">
+                    <li action="job_url"> Copy Job URL </li>
+                    <li action="frame_url"> Copy Frame URL </li>
+                </ul>
+
+                <ul id="pointContextMenu" class="custom-menu" oncontextmenu="return false;">
+                    <li action="remove_point"> Remove </li>
+                </ul>
+            <svg id="frameContent" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="" style="width: 33148px; height: 32828px; top: -28079.7px; left: -28640.9px; transform: scale(1.77292);"> <rect id="SvgjsRect93230" width="44" height="123" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16444" y="16140.50032" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93231" width="75.00006399999984" height="132" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16930.500608" y="16267" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93234" width="38" height="94.99996800000008" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16591.99968" y="16130.500336" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93242" width="62.54084014892578" height="99.90290069580078" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="1" fill-opacity="0" x="16395.041015625" y="16243.9677734375" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93236" width="173.99936000000162" height="136.999679999999" fill="#bc6cac" stroke="#bc6cac" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16851.00032" y="16163.50048" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93233" width="32" height="76.99996800000008" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16497.00032" y="16093.500016" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93232" width="35.00006399999984" height="70.00003199999992" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16622.499328" y="16084.999984" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93455" width="33.842445373535156" height="32.15032196044922" fill="#bc6cac" stroke="#bc6cac" stroke-width="1.4101018977986122" z_order="3" fill-opacity="0" x="16586.126953125" y="16002.2314453125" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93560" width="44" height="40.00003199999992" fill="#bc6cac" stroke="#bc6cac" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16639.69140625" y="16021" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93229" width="26" height="55.99996800000008" fill="#ff007c" stroke="#ff007c" stroke-width="1.4101018977986122" z_order="0" fill-opacity="0" x="16601" y="16045.999696" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93512" width="45.68730163574219" height="38.9188117980957" fill="#bc6cac" stroke="#bc6cac" stroke-width="1.4101018977986122" z_order="2" fill-opacity="0" x="16579.921875" y="16023.1005859375" class="shape" stroke-opacity="1"></rect><rect id="SvgjsRect93384" width="34.40648651123047" height="35.534568786621094" fill="#bc6cac" stroke="#bc6cac" stroke-width="1.4101018977986122" z_order="4" fill-opacity="0" x="16670.732421875" y="16006.7431640625" class="shape" stroke-opacity="1"></rect><defs id="SvgjsDefs1006"></defs></svg></div>
+        </div>
+        <div id="playerPanel">
+            <svg id="firstButton" class="playerButton">
+                <polygon points="100,0 100,80 75,60 75,80 50,60, 50,80 0,40 50,0 50,20 75,0 75,20" transform="scale(0.4)"></polygon>
+            </svg>
+            <svg id="multiplePrevButton" class="playerButton">
+                <polygon points="100,0 100,80 75,60 75,80 25,40 75,0 75,20" transform="scale(0.4)"><title>C - move backward several frames</title></polygon>
+            </svg>
+
+            <svg id="prevButton" class="playerButton">
+                <polygon points="90,20 90,60 50,60 50,80 10,40 50,0 50,20" transform="scale(0.4)"><title>D - move to previous player frame</title></polygon>
+            </svg>
+
+            <svg id="playButton" class="playerButton">
+                <polygon points="35,0 35,80 85,40" transform="scale(0.4)"><title>Space - switch play / pause of player</title></polygon>
+            </svg>
+
+            <svg id="pauseButton" class="playerButton hidden">
+                <rect x="25" y="0" width="20" height="80" transform="scale(0.4)"></rect>
+                <rect x="65" y="0" width="20" height="80" transform="scale(0.4)"></rect>
+            </svg>
+
+            <svg id="nextButton" class="playerButton">
+                <polygon points="10,20 10,60 50,60 50,80 90,40 50,0 50,20" transform="scale(0.4)"><title>F - move to next player frame</title></polygon>
+            </svg>
+
+            <svg id="multipleNextButton" class="playerButton">
+                <polygon points="1,1 1,80 25,60 25,80 75,40 25,0 25,20" transform="scale(0.4)"><title>V - move forward several frames</title></polygon>
+            </svg>
+
+            <svg id="lastButton" class="playerButton">
+                <polygon points="1,1 1,80 25,60 25,80 50,60 50,80 100,40 50,0 50,20 25,0 25,20" transform="scale(0.4)"></polygon>
+            </svg>
+            <input type="range" id="playerProgress" max="588" style="width: 1174px;">
+        </div>  <!-- END of PLAYER PANEL -->
+        <div style="margin-top: 20px">
+            <button id="menuButton" class="regular h2"> Open Menu </button>
+            <label class="regular h2" style="margin-left: 50px"> Filter: </label>
+            <datalist id="filterSubmitList" style="display: none;"></datalist>
+            <input type="text" list="filterSubmitList" id="filterInputString" class="regular h2" placeholder="car[attr/model=/&quot;mazda&quot;" title="
+            Left Arrow - move to prev frame which satisfies the filter
+Right Arrow - move to next frame which satisfies the filter">
+            <button id="resetFilterButton" class="regular h2"> Reset </button>
+            <button class="regular h2" id="undoButton" title="Ctrl + Z - undo"> ⟲ </button>
+            <select size="2" class="regular" style="overflow: hidden; width: 15%; top: 0.5em; position: relative;" disabled="">
+                <option id="lastUndoText" title="Undo Action" selected="">Change Position [Frame 456] [Id 2539]</option>
+                <option id="lastRedoText" title="Redo Action">None</option>
+            </select>
+            <button class="regular h2" id="redoButton" title="Ctrl + Shift + Z / Ctrl + Y - redo" disabled=""> ⟳ </button>
+            <label class="regular h2" style="margin-left: 15px;"> Propagation </label>
+            <input type="number" id="propagateFramesInput" style="width: 3em" min="1" max="10000" value="50" class="regular h2">
+            <label class="regular h2" style="margin-left: 15px;"> Rotation </label>
+            <button class="regular h2" id="clockwiseRotation" title="
+            Ctrl + R - clockwise image rotation"> ⟳ </button>
+            <button class="regular h2" id="counterClockwiseRotation" title="
+            Ctrl + Shift + R - counter clockwise image rotation"> ⟲ </button>
+            <div style="float: right;">
+                <label class="regular h2"> Frame </label>
+                <input class="regular h2" style="width: 3.5em;" type="number" id="frameNumber" title="
+            ~ / ` - focus to &quot;go to frame&quot; element">
+            </div>
+            <hr>
+            <table id="annotationSettingsTable" class="regular">
+                <tbody><tr>
+                <td style="width: auto;">
+                        <div style="float: left;"> <label class="semiBold"> Fill Opacity: </label> </div>
+                        <div style="float: left; margin-left: 1em;"> <input type="range" min="-1" max="1" step="0.2" value="0" id="fillOpacityRange"> </div>
+                    </td>
+                    <td style="width: auto;">
+                        <div style="float: left;"> <label class="semiBold"> Selected Fill Opacity: </label> </div>
+                        <div style="float: left; margin-left: 1em;"> <input type="range" min="0" max="1" value="0.2" step="0.2" id="selectedFillOpacityRange"> </div>
+                    </td>
+                    <td style="width: auto;">
+                        <div style="float: left;"> <label class="semiBold"> Black Stroke: </label> </div>
+                        <div style="float: left; margin-left: 1em;"> <input type="checkbox" id="blackStrokeCheckbox" class="settingsBox"> </div>
+                    </td>
+                    <td style="width: auto;">
+                        <div style="float: left;"> <label class="semiBold"> Color by: </label> </div>
+                        <div style="float: left; margin-left: 10px;">
+                            <label style="margin-right: 10px;"> Instance </label>
+                            <input type="radio" name="colorByRadio" id="colorByInstanceRadio" checked="" class="settingsBox">
+                        </div>
+                        <div style="float: left; margin-left: 10px;">
+                            <label style="margin-right: 10px;"> Group </label>
+                            <input type="radio" name="colorByRadio" id="colorByGroupRadio" class="settingsBox">
+                        </div>
+                        <div style="float: left; margin-left: 10px;">
+                            <label style="margin-right: 10px;"> Label </label>
+                            <input type="radio" name="colorByRadio" id="colorByLabelRadio" class="settingsBox">
+                        </div>
+                        <div style="float: left; margin-left: 50px;" title="Press Ctrl to switch">
+                            <label style="display: none;">
+                                Common borders
+                                <input type="checkbox" id="commonBordersCheckbox" class="settingsBox" style="margin-left: 10px; display: none;">
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>  <!-- END of PLAYER -->
+
+    <div id="helpWindow" class="modal hidden">
+        <div id="helpWindowContent" class="modal-content">
+            <div style="width: 100%; height: 90%; overflow-y: auto;">
+                <div class="selectable">
+                    <label class="h1 semiBold"> Shortkeys: </label> <br>
+                    <table class="regular" id="shortkeyHelpTable"> <tr> <td> L </td> <td> switch lock property for active shape </td> </tr><tr> <td> T + L </td> <td> switch lock property for all shapes on current frame </td> </tr><tr> <td> Q or Num Division </td> <td> switch occluded property for active shape </td> </tr><tr> <td> N </td> <td> start draw / stop draw </td> </tr><tr> <td> M </td> <td> start merge / apply changes </td> </tr><tr> <td> G </td> <td> start group / apply changes </td> </tr><tr> <td> Shift + G </td> <td> reset group for selected shapes </td> </tr><tr> <td> Ctrl + (1,2,3,4,5,6,7,8,9) </td> <td> change shape label for existing object </td> </tr><tr> <td> Shift + (1,2,3,4,5,6,7,8,9) </td> <td> change label default label </td> </tr><tr> <td> Enter </td> <td> change color for highlighted shape </td> </tr><tr> <td> Shift+B / Alt+B </td> <td> increase/decrease brightness of an image </td> </tr><tr> <td> Shift+C / Alt+C </td> <td> increase/decrease contrast of an image </td> </tr><tr> <td> Shift+S / Alt+S </td> <td> increase/decrease saturation of an image </td> </tr><tr> <td> H </td> <td> switch hide mode for active shape </td> </tr><tr> <td> K </td> <td> switch keyframe property for active shape </td> </tr><tr> <td> O </td> <td> switch outside property for active shape </td> </tr><tr> <td> T + H </td> <td> switch hide mode for all shapes </td> </tr><tr> <td> Del, Shift + Del </td> <td> delete active shape (use shift for force deleting) </td> </tr><tr> <td> ~ / ` </td> <td> focus to "go to frame" element </td> </tr><tr> <td> F </td> <td> move to next player frame </td> </tr><tr> <td> D </td> <td> move to previous player frame </td> </tr><tr> <td> V </td> <td> move forward several frames </td> </tr><tr> <td> C </td> <td> move backward several frames </td> </tr><tr> <td> R </td> <td> move to next key frame of highlighted track </td> </tr><tr> <td> E </td> <td> move to previous key frame of highlighted track </td> </tr><tr> <td> Left Arrow </td> <td> move to prev frame which satisfies the filter </td> </tr><tr> <td> Right Arrow </td> <td> move to next frame which satisfies the filter </td> </tr><tr> <td> Space </td> <td> switch play / pause of player </td> </tr><tr> <td> F1 </td> <td> open help window </td> </tr><tr> <td> F2 </td> <td> open settings window  </td> </tr><tr> <td> Ctrl + S </td> <td> save work on the server </td> </tr><tr> <td> Ctrl + C </td> <td> copy active shape to buffer </td> </tr><tr> <td> Ctrl + B </td> <td> propagate active shape </td> </tr><tr> <td> Ctrl + V </td> <td> switch paste mode </td> </tr><tr> <td> Shift + Enter </td> <td> switch attribute annotation mode </td> </tr><tr> <td> Down Arrow </td> <td> move to next attribute in attribute annotation mode </td> </tr><tr> <td> Up Arrow </td> <td> move to previous attribute in attribute annotation mode </td> </tr><tr> <td> Tab </td> <td> move to next shape in attribute annotation mode </td> </tr><tr> <td> Shift + Tab </td> <td> move to previous shape in attribute annotation mode </td> </tr><tr> <td> 1,2,3,4,5,6,7,8,9,0 </td> <td> setup corresponding attribute value in attribute annotation mode </td> </tr><tr> <td> Alt + G + "+", Alt + G + "-" </td> <td> increase/decrease grid opacity </td> </tr><tr> <td> Alt + G + Enter </td> <td> change grid color </td> </tr><tr> <td> Ctrl + Z </td> <td> undo </td> </tr><tr> <td> Ctrl + Shift + Z / Ctrl + Y </td> <td> redo </td> </tr><tr> <td> Esc </td> <td> cancel active mode </td> </tr><tr> <td> Ctrl + R </td> <td> clockwise image rotation </td> </tr><tr> <td> Ctrl + Shift + R </td> <td> counter clockwise image rotation </td> </tr><tr> <td> Alt + &gt; </td> <td> switch next default shape type </td> </tr><tr> <td> Alt + &lt; </td> <td> switch previous default shape type </td> </tr></table>
+                    <label class="h1 semiBold"> <br> Hints: <br> </label>
+                    <label class="regular"> - Hold MOUSEWHEEL in order to move frame (during drawing for example). </label> <br>
+                    <label class="regular"> - Hold CTRL key when track highlighted and fix it. </label> <br>
+                    <label class="regular"> - Hold CTRL key when paste shape from buffer for multiple pasting. </label> <br>
+                    <label class="h1 semiBold"> <br> Filter Help: <br> </label>
+                    <label class="regular">
+                        Filter Format: label[property operator "value"] (USE LOWER CASE ONLY) <br>
+                        Label is a type of bounding box (car, person, etc). Use "*" for any label. <br>
+                        Property is a limited set of values: id, type, lock, occluded, attr. <br>
+                        Operator is "=", "!=" for any properties and "&gt;", "&lt;", "&gt;=", "&lt;=" for numeric properties. <br>
+                        For complex conditions please use 'or', 'and' (for properties) "|" (for labels) operators. <br> <br>
+                        Examples: <br>
+                        *[mode="annotation"] - only annotation objects <br>
+                        *[type="polygon"] - only polygon objects <br>
+                        car[occluded="true"] - only occluded cars <br>
+                        *[lock!="true"] - only unlocked tracks <br>
+                        person[attr/age&gt;="25" and attr/age&lt;="35"] - persons with age (number) between [25,40] years <br>
+                        car[attr/parked="true"] - only parked cars <br>
+                        person[attr/race="asian"] | car[attr/model="bmw"] - asians and BMW cars <br>
+                        face[attr/glass="sunglasses" or attr/glass="no"] - faces with sunglasses or without glass <br>
+                        *[attr/*="__undefined__"] - any tracks with any unlabeled attributes <br>
+                        *[width&lt;300 or height&lt;300] - shapes with height or width less than 300px <br>
+                        person[width&gt;300 and height&lt;200] - person shapes with width &gt; 300px and height &lt; 200px <br>
+                     </label>
+                </div>
+            </div>
+            <center> <button id="closeHelpButton" class="regular h1" style="margin-top: 15px;"> Close </button> </center>
+        </div>
+    </div>
+
+    <div id="settingsWindow" class="modal hidden">
+        <div id="settingsWindowContent" class="modal-content">
+            <div id="playerSettings" style="width: 48%; height: 90%; float: left;">
+                <center> <label class="semiBold h1"> Player Settings </label> </center>
+                <table style="border-collapse: separate; border-spacing: 10px; overflow-y: auto;" class="regular">
+                    <tbody><tr>
+                        <td> <label> Player Step </label> </td>
+                        <td> <input type="number" min="1" max="100" value="10" id="playerStep" class="regular h2"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Player Speed </label> </td>
+                        <td>
+                            <select id="speedSelect" class="regular h3">
+                                <option value="1"> 1 FPS </option>
+                                <option value="2"> 5 FPS </option>
+                                <option value="3"> 12 FPS </option>
+                                <option value="4" selected=""> 25 FPS </option>
+                                <option value="5"> 50 FPS </option>
+                                <option value="6"> 100 FPS </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Reset Zoom </label> </td>
+                        <td> <input type="checkbox" id="resetZoomBox" class="settingsBox"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Grid Size </label> </td>
+                        <td> <input type="number" min="5" max="1000" value="100" id="playerGridSizeInput" class="regular h2"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Grid Opacity </label> </td>
+                        <td> <input type="range" min="0" max="5" value="0" id="playerGridOpacityInput" class="regular h2" title="
+            Alt + G + &quot;+&quot;, Alt + G + &quot;-&quot; - increase/decrease grid opacity"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Grid Stroke </label> </td>
+                        <td>
+                            <select id="playerGridStrokeInput" class="regular h2" title="
+            Alt + G + Enter - change grid color">
+                                <option value="black"> Black </option>
+                                <option value="red"> Red </option>
+                                <option value="green"> Green </option>
+                                <option value="blue"> Blue </option>
+                                <option value="white" selected=""> White </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <label for="playerBrightnessRange"> Brightness: </label> </td>
+                        <td> <input type="range" min="50" max="200" value="100" id="playerBrightnessRange" title="
+        Shift+B / Alt+B - increase/decrease brightness of an image"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label for="playerContrastRange"> Contrast: </label> </td>
+                        <td> <input type="range" min="50" max="200" value="100" id="playerContrastRange" title="
+        Shift+C / Alt+C - increase/decrease contrast of an image"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label for="playerSaturationRange"> Saturation: </label> </td>
+                        <td> <input type="range" min="0" max="300" value="100" id="playerSaturationRange" title="
+        Shift+S / Alt+S - increase/decrease saturation of an image"> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="resetPlayerFilterButton" class="regular h1"> Reset Color Settings </button>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <div id="otherSettigns" style="width: 48%; height: 90%; float: left;">
+                <center> <label class="semiBold h1"> Other Settings </label> </center>
+                <table style="border-collapse: separate; border-spacing: 10px; overflow-y: auto;" class="regular">
+                    <tbody><tr>
+                        <td> <label> Show All Interpolation Tracks </label> </td>
+                        <td> <input type="checkbox" id="showAllInterBox" class="settingsBox"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> AAM Zoom Margin </label> </td>
+                        <td> <input type="range" min="0" max="1000" value="100" id="aamZoomMargin"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Enable Auto Saving </label> </td>
+                        <td> <input type="checkbox" id="autoSaveBox" class="settingsBox"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Auto Saving Interval (Min) </label> </td>
+                        <td> <input type="number" id="autoSaveTime" style="width: 3em" min="5" max="60" value="15" class="regular h2"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label> Rotate All Images </label> </td>
+                        <td> <input type="checkbox" id="rotateAllImages" class="settingsBox"> </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <center>
+                <button id="closeSettignsButton" class="regular h1" style="margin-top: 15px;"> Close </button>
+            </center>
+        </div>
+    </div>
+
+    <div id="annotationMenu" class="hidden regular">
+        <center style="float:left; width: 28%; height: 100%;" id="engineMenuButtons">
+            <select id="downloadAnnotationButton" class="menuButton semiBold h2" style="text-align-last: center;">
+                <option selected="" disabled=""> Dump Annotation </option>
+            <option>CVAT XML 1.1 for images</option><option class="regular">CVAT XML 1.1 for videos</option><option class="regular">PASCAL VOC ZIP 1.0</option><option class="regular">YOLO ZIP 1.0</option><option class="regular">COCO JSON 1.0</option><option class="regular">MASK (by instance) ZIP 1.0</option><option class="regular">MASK (by class) ZIP 1.0</option><option class="regular">TFRecord ZIP 1.0</option><option class="regular">MOT CSV 1.0</option><option class="regular">LabelMe ZIP 3.0 for images</option></select>
+
+            <select id="uploadAnnotationButton" class="menuButton semiBold h2" style="text-align-last: center;">
+                    <option selected="" disabled=""> Upload Annotation </option>
+            <option class="regular">CVAT XML 1.1</option><option class="regular">PASCAL VOC ZIP 1.0</option><option class="regular">YOLO ZIP 1.0</option><option class="regular">COCO JSON 1.0</option><option class="regular">TFRecord ZIP 1.0</option><option class="regular">MOT CSV 1.0</option><option class="regular">LabelMe ZIP 3.0</option></select>
+
+            <button id="openTaskButton" class="menuButton semiBold h2"> Open Task </button>
+            <button id="removeAnnotationButton" class="menuButton semiBold h2"> Remove Annotation </button>
+            <button id="settingsButton" class="menuButton semiBold h2" title="
+        F2 - open settings window "> Settings </button>
+            <button id="fullScreenButton" class="menuButton semiBold h2"> Fullscreen Player </button>
+            <button id="switchAAMButton" class="menuButton semiBold h2" title="
+        Shift + Enter - switch attribute annotation mode"> Switch AAM </button>
+            <button id="helpButton" class="menuButton semiBold h2" title="
+        F1 - open help window"> Help </button>
+            <button id="saveButton" class="menuButton semiBold h2" title="Ctrl + S - save work on the server">Save Work</button>
+            <input type="file" id="annotationFileSelector" style="display: none">
+        </center>
+        <div style="float:left; width: 70%; height: 100%; text-align: left;" class="selectable">
+            <center>
+                <label id="statTaskName" class="semiBold h2">cam15_1</label>  <br>
+                <center>
+                    <select id="statTaskStatus" class="regular h2" style="outline: none; border-radius: 10px; background:#B0C4DE; border: 1px solid black;">
+                        
+                            <option value="annotation"> annotation </option>
+                        
+                            <option value="validation"> validation </option>
+                        
+                            <option value="completed"> completed </option>
+                        
+                    </select>
+                </center>
+            </center>
+            <center>
+                <table style="width: 100%">
+                    <tbody><tr>
+                        <td style="width: 30%;">
+                            <label class="regular h2"> Frames: </label>
+                            <label id="statFrames" class="regular h2">[0-588]</label>
+                        </td>
+                        <td style="width: 30%;">
+                            <label class="regular h2"> Overlap: </label>
+                            <label id="statOverlap" class="regular h2">0</label>
+                        </td>
+                        <td style="width: 30%;">
+                            <label class="regular h2"> Z-Order: </label>
+                            <label id="statZOrder" class="regular h2">false</label>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </center>
+            <center> <label class="semiBold h2"> Segment Statistic </label> </center>
+            <div style="text-align: center; max-height: 250px; overflow: auto; display: block;">
+                <table id="annotationStatisticTable">
+                    <tbody><tr class="semiBold">
+                        <td> Label </td>
+                        <td colspan="2"> Boxes </td>
+                        <td colspan="2"> Polygons </td>
+                        <td colspan="2"> Polylines </td>
+                        <td colspan="2"> Points </td>
+                        <td> Manually </td>
+                        <td> Interpolated </td>
+                        <td> Total </td>
+                    </tr>
+                    <tr>
+                        <td> </td> <!-- Empty -->
+                        <td> S </td>
+                        <td> T </td>
+                        <td> S </td>
+                        <td> T </td>
+                        <td> S </td>
+                        <td> T </td>
+                        <td> S </td>
+                        <td> T </td>
+                        <td> </td>  <!-- Empty -->
+                        <td> </td>  <!-- Empty -->
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab customizedTab">
+    <button class="h2 regular activeTabButton" id="sidePanelObjectsButton" style="width: 50%">Objects</button>
+    <button class="h2 regular" id="sidePanelLabelsButton" style="width: 50%">Labels</button>
+</div>
+<div id="taskAnnotationRightPanel"><div id="uiContent"><div class="uiElement regular" style="background-color: rgb(188, 108, 172);"><div class="bold" style="margin-right: 32px;"><label>Car 6474 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(188, 108, 172);"><div class="bold" style="margin-right: 32px;"><label>Car 6473 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(188, 108, 172);"><div class="bold" style="margin-right: 32px;"><label>Car 6472 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 6471 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(188, 108, 172);"><div class="bold" style="margin-right: 32px;"><label>Car 2819 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(188, 108, 172);"><div class="bold" style="margin-right: 32px;"><label>Car 2818 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2817 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2816 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2815 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2814 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2813 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div><div class="uiElement regular" style="background-color: rgb(255, 0, 124);"><div class="bold" style="margin-right: 32px;"><label>Bike 2812 [box, annotation]</label><a class="close" title="
+                Del, Shift + Del - delete active shape (use shift for force deleting)"></a></div><div><hr><center><button class="graphicButton lockButton" title="
+                    L - switch lock property for active shape
+T + L - switch lock property for all shapes on current frame"></button><button class="graphicButton occludedButton" title="
+                    Q or Num Division - switch occluded property for active shape"></button><button class="graphicButton copyButton" title="
+                    Ctrl + C - copy active shape to buffer
+Ctrl + V - switch paste mode"></button><button class="graphicButton propagateButton" title="
+                    Ctrl + B - propagate active shape"></button><button class="graphicButton hiddenButton hiddenText" title="
+                    H - switch hide mode for active shape
+T + H - switch hide mode for all shapes"></button></center></div><div><label class="semiBold">Label: </label><select class="regular" title="
+                    Ctrl + (1,2,3,4,5,6,7,8,9) - change shape label for existing object"><option value="41">Bike</option><option value="42">Car</option><option value="43">Truck</option><option value="44">MiniBus</option><option value="45">Bus</option></select></div></div> </div>
+    
+    <div id="labelsContent" class="hidden"> <div class="labelContentElement h2 regular" label_id="41" style="background-color: rgb(255, 0, 124);"> <label> Bike </label><center class="buttonBlockOfLabelUI"> <button class="graphicButton lockButton" title="Switch lock for all object with same label"> </button><button class="graphicButton hiddenButton hiddenText" title="Switch hide for all object with same label"> </button></center></div><div class="labelContentElement h2 regular" label_id="42" style="background-color: rgb(188, 108, 172);"> <label> Car </label><center class="buttonBlockOfLabelUI"> <button class="graphicButton lockButton" title="Switch lock for all object with same label"> </button><button class="graphicButton hiddenButton hiddenText" title="Switch hide for all object with same label"> </button></center></div><div class="labelContentElement h2 regular hidden" label_id="43" style="background-color: rgb(220, 204, 215);"> <label> Truck </label><center class="buttonBlockOfLabelUI"> <button class="graphicButton lockButton" title="Switch lock for all object with same label"> </button><button class="graphicButton hiddenButton hiddenText" title="Switch hide for all object with same label"> </button></center></div><div class="labelContentElement h2 regular hidden" label_id="44" style="background-color: rgb(235, 225, 194);"> <label> MiniBus </label><center class="buttonBlockOfLabelUI"> <button class="graphicButton lockButton" title="Switch lock for all object with same label"> </button><button class="graphicButton hiddenButton hiddenText" title="Switch hide for all object with same label"> </button></center></div><div class="labelContentElement h2 regular hidden" label_id="45" style="background-color: rgb(166, 170, 174);"> <label> Bus </label><center class="buttonBlockOfLabelUI"> <button class="graphicButton lockButton" title="Switch lock for all object with same label"> </button><button class="graphicButton hiddenButton hiddenText" title="Switch hide for all object with same label"> </button></center></div></div>
+    <div id="trackManagement">
+        <button id="createShapeButton" class="regular h2" style="width: 80%;" title="
+            N - start draw / stop draw">Create Shape</button>
+        <button id="mergeTracksButton" class="regular h2" style="width: 80%; margin-top: 5px;" title="
+            M - start merge / apply changes"> Merge Shapes </button>
+        <button id="groupShapesButton" class="regular h2" style="width: 80%; margin-top: 5px;" title="
+            G - start group / apply changes
+Shift + G - reset group for selected shapes">Group Shapes</button>
+        <select id="shapeLabelSelector" class="regular h2" title="
+            Shift + (1,2,3,4,5,6,7,8,9) - change label default label"> <option value="41"> Bike </option><option value="42"> Car </option><option value="43"> Truck </option><option value="44"> MiniBus </option><option value="45"> Bus </option></select>
+        <select id="shapeModeSelector" class="regular h2">
+            <option value="annotation" class="regular"> Annotation </option>
+            <option value="interpolation" class="regular"> Interpolation </option>
+        </select>
+        <select id="shapeTypeSelector" class="regular h2">
+            <option value="box" class="regular" selected=""> Box </option>
+            <option value="box_by_4_points" class="regular" selected=""> Box by 4 points </option>
+            <option value="polygon" class="regular"> Polygon </option>
+            <option value="polyline" class="regular"> Polyline </option>
+            <option value="points" class="regular"> Points </option>
+        </select>
+        <div id="polyShapeSizeWrapper">
+            <label for="polyShapeSize" class="regular h2"> Poly Shape Size: </label>
+            <input id="polyShapeSize" type="text" value="" class="regular h2" style="width: 30%; margin-top: 1%;" placeholder="0-100">
+        </div>
+    </div>
+    <div id="aamMenu" class="hidden">
+        <label class="regular h1"> AAM Mode </label>
+        <label id="aamCounter" class="regular h1"> </label> <br>
+        <label id="aamTitle" class="regular h2"> </label>
+        <div id="aamHelpContainer" class="regular">
+        </div>
+    </div>
+</div>
+
+
+        
+        
+
+        
+    
+
+    <template id="confirmTemplate"></template>
+
+
+    <template id="messageTemplate"></template>
+
+    <template id="overlayTemplate"></template>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="modal" style="display: block;">
+            <div class="modal-content" style="width: 400px; height: auto; max-height: 600px; overflow: auto;">
+                <label class="regular templateMessage selectable" style="word-break: break-word;">Couldn't to save the job. Errors occured: Could not make create annotations. Code: 401. Message: {"detail":"Authentication credentials were not provided."}. Please report the problem to support team immediately.</label>
+                <center>
+                    <button class="regular h2 templateOKButton" style="margin-top: 20px"> Ok </button>
+                </center>
+            </div>
+        </div></body></html>

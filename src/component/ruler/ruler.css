@@ -1,0 +1,108 @@
+.ruler .cm,
+.ruler .mm {
+  position: absolute;
+  border-left: 1px solid #555;
+  height: 20px;
+  width: 10%;
+}
+
+.ruler .mm {
+  height: 5px;
+}
+
+/* hours */
+.ruler .cm:nth-of-type(1) {
+  left: 0%;
+}
+
+.ruler .cm:nth-of-type(2) {
+  left: 6%;
+}
+
+.ruler .cm:nth-of-type(3) {
+  left: 12%;
+}
+
+.ruler .cm:nth-of-type(4) {
+  left: 18%;
+}
+
+.ruler .cm:nth-of-type(5) {
+  left: 24%;
+}
+
+.ruler .cm:nth-of-type(6) {
+  left: 30%;
+}
+
+.ruler .cm:nth-of-type(7) {
+  left: 36%;
+}
+
+.ruler .cm:nth-of-type(8) {
+  left: 42%;
+}
+
+.ruler .cm:nth-of-type(9) {
+  left: 48%;
+}
+
+.ruler .cm:nth-of-type(10) {
+  left: 54%;
+}
+
+.ruler .cm:nth-of-type(11) {
+  left: 60%;
+}
+
+.ruler .cm:nth-of-type(12) {
+  left: 66%;
+}
+.ruler .cm:nth-of-type(13) {
+  left: 72%;
+}
+.ruler .cm:nth-of-type(14) {
+  left: 78%;
+}
+.ruler .cm:nth-of-type(15) {
+  left: 84%;
+}
+.ruler .cm:nth-of-type(16) {
+  left: 90%;
+}
+.ruler .cm:nth-of-type(17) {
+  left: 96%;
+}
+.ruler .cm:nth-of-type(18) {
+  left: 102%;
+}
+
+/* 30 min mark */
+.ruler .mm:nth-of-type(3) {
+  height: 10px;
+}
+
+/* 10 minutes ruler markings */
+.ruler .mm:nth-of-type(1) {
+  left: 10%;
+}
+
+.ruler .mm:nth-of-type(2) {
+  left: 20%;
+}
+
+.ruler .mm:nth-of-type(3) {
+  left: 30%;
+}
+
+.ruler .mm:nth-of-type(4) {
+  left: 40%;
+}
+
+.ruler .mm:nth-of-type(5) {
+  left: 50%;
+}
+
+/* .ruler .mm:nth-of-type(6) {
+  left: 60%;
+} */

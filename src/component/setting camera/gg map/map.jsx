@@ -60,7 +60,7 @@ const Mapapi = (props) => {
                 googleMapsApiKey="AIzaSyDb5xOZiLOJAtKJWj4spvQf3UEQvE-3sc4"
             >
                 <GoogleMap
-                    zoom={14}
+                    zoom={17}
                     center={props.item?.position}
                 >
                     {state.apiMarker.map((item, index) => {

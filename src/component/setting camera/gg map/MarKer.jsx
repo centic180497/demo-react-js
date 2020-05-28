@@ -5,6 +5,7 @@ export const Marker = (props) => {
     return (
         <>
             <MarkerComponent
+                zoom={17}
                 position={props.item?.position}
                 onClick={() => props.handleClick(props.item)}
             />
